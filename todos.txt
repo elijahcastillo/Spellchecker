@@ -1,0 +1,7 @@
+- Handle uppercases in file scan
+- Handle punctuation in file scan
+
+- handle backspace for current word in interactive
+- handle hitting enter in interactive for suggestion
+  - Have to get the length of current word remove that from the input string then append the selected word to the input string
+- If backsapce into a word when we should be able to extract that word even if current word was cleared due to space
