@@ -21,7 +21,7 @@ SpellChecker CLI comes with a suite of features designed to cater to a wide rang
 
 
 ## Prerequisites
-- A C++ compiler (e.g., GCC, Clang, MSVC)
+- A C++ compiler (g++)
 - Git (for cloning the repository)
 - Make (for macOS/Linux)
 
