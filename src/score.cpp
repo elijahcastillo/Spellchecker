@@ -1,4 +1,5 @@
 #include "include/score.h"
+#include "include/heapsort.h"
 
 
 double combinedScore(const std::string& inputWord, const std::string& candidateWord) {
@@ -53,7 +54,7 @@ std::vector<WordScore> get_best_words(PrefixTrie* pt, const std::string& input) 
     }
 
     // Sort the vector of WordScore by the score in descending order
-    std::sort(word_scores.begin(), word_scores.end(), WordScore::compare);
+    Sort::heapSort(word_scores);
 
     return word_scores;
 }
