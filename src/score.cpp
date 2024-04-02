@@ -3,6 +3,17 @@
 
 
 double combinedScore(const std::string& inputWord, const std::string& candidateWord) {
+/**
+ *  Given two input strings, give a score based on different algorithms that
+ *  shows how similar they are to each other
+ *
+ *
+ * @param inputWord - First input string
+ * @param candidateWord - Second input string
+ * @return double - Similarity score of the words
+ */
+
+
     /* const int lcsScore = LCS(inputWord, candidateWord); */
     const double levDistance = levenshtine_distance(inputWord, candidateWord);
     const double cosineSimScore = cosineSimilarityScore(inputWord, candidateWord);
@@ -23,6 +34,19 @@ double combinedScore(const std::string& inputWord, const std::string& candidateW
 
 
 std::vector<WordScore> get_best_words(PrefixTrie* pt, const std::string& input) {
+/**
+ * Given an input word, using hte prefix trie narrow down the words to look through
+ * give each word a score based on how similar it is to the input string
+ * sort by those given scores
+ *
+ * It narrows down the words by only getting the words that start with either
+ * of the first 2 letters of the input string
+ *
+ *
+ * @param pt - Prefix Trie containing all the words from the loaded dictionary
+ * @param input - Word to comparse against 
+ * @return std::vector<WordScore> sorted list of words by how close they are to the input
+*/
     
     std::vector<std::string> found_words;
     std::vector<WordScore> word_scores;

@@ -61,8 +61,8 @@ int LCS(const std::string& str1, const std::string& str2) {
   // Example 'cat' & 'hat'
   // -----------------------------------
   //     ""  c   a   t
-  //  "" 0   0   0   0  <-- Row for LCS with "" and prefixes of 'cat'
-  //  h  0   0   0   0  <-- 'h' does not match any letter in 'cat' so carry over the previous values
+  //  "" 0   0   0   0  <-- Row for LCS with "" and prefixes of cat
+  //  h  0   0   0   0  <-- 'h' does not match any letter in cat so carry over the previous values
   //  a  0   0   1   1  <-- 'a' matches in both increment diagonal by 1
   //  t  0   0   1   2  <-- 't' matches in both increment diagonal by 1
 
