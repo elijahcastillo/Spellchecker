@@ -34,7 +34,7 @@ Follow these steps to install SpellChecker CLI on your machine:
    Use Git to clone the SpellChecker CLI repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/spellchecker-cli.git
+   git clone https://github.com/elijahcastillo/Spellchecker.git
    ```
 
 2. **Build the Project**
