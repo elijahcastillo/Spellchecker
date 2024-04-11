@@ -10,7 +10,9 @@
 void printHelp() {
     std::cout << "Usage:\n"
               << "  -repl\t\tStarts the application in REPL mode\n"
+              << "  -acc [file/dir]\t\tGive you a score about a file\n"
               << "  -file [filename]\tStarts file scanning on the specified file. Use -o to specify output file.\n"
+              << "  -i\tInteractive mode, small text editor, save with ctr+w\n"
               << "  -o [output_filename]\tSpecifies the output file for file scanning (must be used with -file)\n"
               << "  -help\t\tDisplays this help message\n";
 }
