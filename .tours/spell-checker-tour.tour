@@ -1,0 +1,81 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Spell Checker Tour",
+  "steps": [
+    {
+      "file": "src/main.cpp",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 2
+        }
+      },
+      "description": "Inside of this spell checker application we have many different features including a repl, file checker, accuracy score, and interactive mode",
+      "title": "Introduction/Usage"
+    },
+    {
+      "file": "src/main.cpp",
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 1
+        },
+        "end": {
+          "line": 44,
+          "character": 4
+        }
+      },
+      "description": "This reads in all of the correctly spelled words from the dictionary file into the prefix trie for fast look up's later on",
+      "title": "Loading Words"
+    },
+    {
+      "file": "src/include/comparisonAlgorithms.h",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 12,
+          "character": 81
+        }
+      },
+      "description": "Given a user inputed word we can compare how similar certain words in the prefix trie are to the user word. By combining the scores from these algorithms we can get a more accurate idea of what the user was trying to spell out",
+      "title": "Compare"
+    },
+    {
+      "file": "src/include/heapsort.h",
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 1
+        }
+      },
+      "description": "These scores are sorted using heapsort to give us the best option to give back to the user",
+      "title": "Sort"
+    },
+    {
+      "file": "src/include/features.h",
+      "selection": {
+        "start": {
+          "line": 35,
+          "character": 1
+        },
+        "end": {
+          "line": 41,
+          "character": 50
+        }
+      },
+      "description": "When the user starts the program based on what arguments they pass in we can use the algorithms and data structures provided to give them a good user exerience and better spelling habits",
+      "title": "Features"
+    }
+  ]
+}
