@@ -44,11 +44,11 @@ void print_file_accuracy(const fs::path& filePath, PrefixTrie* pt) {
         return;
     }
 
+    // Count the words and misspellings
     std::string currentWord;
     while (in_file >> currentWord) {
         totalWords++;
         currentWord = cleanWord(currentWord);
-        /* std::cout << currentWord << "\n"; */
         if (!pt->does_word_exist(currentWord)) misspelledWords++;
     }
 

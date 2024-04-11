@@ -3,6 +3,12 @@
 
 
 void PrefixTrie::destroy(TrieNode* current) {
+/**
+ * Recursivly destory the prefix trie from the first passed in node
+ *
+ * @param current - Node to recursivly delete from
+ */
+
     // Base Case
     if (current == nullptr) return;
 
@@ -17,6 +23,11 @@ void PrefixTrie::destroy(TrieNode* current) {
 
 
 bool PrefixTrie::insert_word(std::string word){
+  /**
+ * Insert the given word into the prefix trie
+ *
+ * @param word - Word to be inserted
+ */
 
   TrieNode* current = root;
 
@@ -51,6 +62,10 @@ bool PrefixTrie::insert_word(std::string word){
 
 
 void PrefixTrie::find_words(TrieNode* node, std::string currentWord, std::vector<std::string>& words) {
+  /**
+   * Recursive helper function to find all words with prefix
+   */
+
     // Base Case
     if (node == nullptr) return;
 
@@ -72,6 +87,13 @@ void PrefixTrie::find_words(TrieNode* node, std::string currentWord, std::vector
 
 
 std::vector<std::string> PrefixTrie::get_words_from_prefix(std::string prefix){
+  /**
+ *  Given a prefix return a vector of all of the words stored in the 
+ *  prefix trie that start with that prefix
+ *
+ * @param prefix - What all returned words must start with
+ * @return vector<string> - All words with passed in prefix stored in trie
+ */
     TrieNode* current = root;
     std::vector<std::string> found_words;
 
@@ -98,6 +120,13 @@ std::vector<std::string> PrefixTrie::get_words_from_prefix(std::string prefix){
   
 
 bool PrefixTrie::does_word_exist(std::string word){
+  /**
+ *  Deternmines if the word exists inside of the prefix trie
+ *
+ * @param word - First input string
+ * @return bool - Does the word exists in the trie
+ */
+
   TrieNode* current = root;
 
   //Loop over each character in the word
