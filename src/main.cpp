@@ -3,7 +3,9 @@
 #include <fstream>
 #include "include/prifixTrie.h"
 #include "include/features.h"
+#include "include/exportedWords.h"
 #define DICTIONARY_FILE "src/words/50000.txt"
+
 
 
 
@@ -20,26 +22,37 @@ void printHelp() {
 
 int main(int argc, char** argv){
 
-    if (argc == 1) {
-        printHelp();
-        return 1;
-    }
 
-  std::fstream file(DICTIONARY_FILE);
-    if(!file.is_open()){
+
+  if (argc == 1) {
+      printHelp();
+      return 1;
+  }
+  PrefixTrie pt;
+
+#if 0
+  // Fill in prefix tree
+  std::fstream file(dictionary);
+  if(!file.is_open()){
       std::cout << "Could not open file: " << DICTIONARY_FILE << std::endl;
       exit(1);
   }
-
-
-
-  // Fill in prefix tree
-  PrefixTrie pt;
   std::string word;
   while(file >> word){
     bool success = pt.insert_word(word);
     if(!success){
       std::cout << "ERROR: Unable to add word '" << word << "'" << "\n";
+    }
+  }
+#endif // Read in from file
+
+
+  // Loop over the array using a pointer
+  for (const char** word = dict; *word != nullptr; ++word) {
+    //std::cout << *word << std::endl;
+    bool success = pt.insert_word(std::string(*word));
+    if(!success){
+      std::cout << "ERROR: Unable to add word '" << *word << "'" << "\n";
     }
   }
 
