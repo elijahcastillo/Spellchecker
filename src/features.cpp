@@ -294,6 +294,10 @@ void file_scan_start(PrefixTrie* pt, const std::string& filename, const std::str
         out_file << ch;
     }
 
+    // Last word in file was not saving, so explicitly add
+    out_file << word;
+    
+
     // Success
     std::cout << GREEN << "Sucesfully updated spellings to " << YELLOW << output_filename << RESET << "\n";
 

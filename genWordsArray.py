@@ -1,3 +1,6 @@
+
+# Generates an array of strings in a c file to be 
+# loaded into the spellchecker
 with open("src/words/50000.txt", "r") as input_file:
     lines = input_file.readlines()
 
@@ -5,7 +8,7 @@ with open("src/words/50000.txt", "r") as input_file:
         # Write the start of the array
         output_file.write("const char* dict[] = {\n    ")
 
-        # Process each word, remove the newline, and write it to the file on the same line
+        # Process each word, and write it to the file on the same line
         for word in lines:
             clean_word = word.strip()  # Remove whitespace characters like `\n` at the start and end
             output_file.write(f'"{clean_word}", ')
