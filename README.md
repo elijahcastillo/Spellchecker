@@ -16,7 +16,7 @@ SpellChecker CLI comes with a suite of features designed to cater to a wide rang
 - **REPL Mode**: An interactive Read-Eval-Print Loop mode that allows users to enter text and receive immediate spelling corrections and suggestions
 - **File Scanning**: Process text files to identify and correct misspellings, with options to output the corrected text to a specified file
 - **Accuracy Reporting**: Analyze documents to report the percentage of correctly spelled words and identify misspellings. Supports batch files
-- **Interactive (Windows Only)**: A simple text editting mode in the termianl that provides real-time suggestions as you type, can save to file when you are done
+- **Interactive (Windows Only)**: A simple text editting mode in the termianl that provides real-time suggestions as you type, can save to file when you are done by pressing CTR + s
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ Follow these steps to install SpellChecker CLI on your machine:
 
 3. **Add the Executable to Your PATH**
 
-   To use SpellChecker CLI from any directory, add the path to the executable to your system's PATH environment variable. This step varies by operating system, so consult your OS documentation for instructions.
+   To use SpellChecker CLI from any directory, add the path to the executable to your system's PATH environment variable. This step varies by operating system, so consult your OS documentation for instructions
 
 ## Usage
 
