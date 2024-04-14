@@ -387,8 +387,8 @@ void interactive(PrefixTrie* pt){
             c = terminal.readKey();
 
 
-            // Check for Control + W to save and exit
-            if(c == 23){
+            // Check for Control + S to save and exit
+            if(c == 19){
                 terminal.clearScreen();
                 terminal.disableRawMode();
                 

@@ -75,8 +75,11 @@ int TerminalMode::readKey() {
         ReadConsoleInput(hIn, &ir, 1, &read);
     } while (ir.EventType != KEY_EVENT || !ir.Event.KeyEvent.bKeyDown);
 
+
     // Weird Uppercase names not a big fan
-    return ir.Event.KeyEvent.uChar.AsciiChar;
+    int asciiValue = ir.Event.KeyEvent.uChar.AsciiChar;
+    /* std::cout << "Read ASCII: " << asciiValue << std::endl;  // Debug output */
+    return asciiValue;
 
 }
 
