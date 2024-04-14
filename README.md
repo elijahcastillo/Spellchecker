@@ -1,26 +1,25 @@
-
 # SpellChecker CLI
 
 SpellChecker CLI is a command-line interface application designed to identify and correct misspellings in text. Utilizing advanced algorithms and a comprehensive dictionary, it offers efficient spell-checking capabilities for both interactive and batch processing modes
 
-
-
 ## Data Strucures & Algorithms
-- Prefix Trie: Easily store all words in dictonary with easy and efficient lookups 
+
+- Prefix Trie: Easily store all words in dictonary with easy and efficient lookups
 - Levenshtine Distance: Give an edit score to covnert one word into another
 - Cosine Similarity: Give a number indicating how similar two words are
 - HeapSort: Normal Sorting algorithm
 
 ## Features
+
 SpellChecker CLI comes with a suite of features designed to cater to a wide range of spelling correction needs:
 
 - **REPL Mode**: An interactive Read-Eval-Print Loop mode that allows users to enter text and receive immediate spelling corrections and suggestions
 - **File Scanning**: Process text files to identify and correct misspellings, with options to output the corrected text to a specified file
 - **Accuracy Reporting**: Analyze documents to report the percentage of correctly spelled words and identify misspellings. Supports batch files
-- **Interactive (Windows Only)**: A simple text editting mode in the termianl that provides real-time suggestions as you type, can save to file when you are done 
-
+- **Interactive (Windows Only)**: A simple text editting mode in the termianl that provides real-time suggestions as you type, can save to file when you are done
 
 ## Prerequisites
+
 - A C++ compiler (g++)
 - Git (for cloning the repository)
 - Make (for macOS/Linux)
@@ -50,25 +49,34 @@ Follow these steps to install SpellChecker CLI on your machine:
 
 ## Usage
 
-
 ##### REPL
+
 ```bash
-   spellcheck -repl 
+   spellcheck -repl
 ```
+
+![REPL](./gifs/REPL.gif)
 
 ##### File Checker
+
 ```bash
-   spellcheck -file [filename] -o [filename(optional)] 
+   spellcheck -file [filename] -o [filename(optional)]
 ```
 
+![File](./gifs/file.gif)
+
 ##### File(s) Accuracy Score
+
 ```bash
    spellcheck -acc [filename/directory]
 ```
 
+![Accuracy](./gifs/acc.gif)
+
 ##### Interactive Mode
+
 ```bash
    spellcheck -i
 ```
 
-## Contributing
+![Interactive](./gifs/inter.gif)
