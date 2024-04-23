@@ -31,7 +31,7 @@ namespace Sort {
       // Swap the root with the largest element
       swapItem(arr, largest, subTreeIndex);
 
-      // Recursively heapify the affected sub-tree to ensure it's a max heap
+      // Recursively heapify the affected subtree to ensure its a max heap
       heapify(arr, heapSize, largest);
     }
 
@@ -64,7 +64,7 @@ namespace Sort {
       heapify(arr, i, 0);
     }
     // Example of array after initial build max heap: [9, 6, 5, 2, 3]
-    // Example after first extraction and heapify:    [5, 3, 2, 6, 9] (6 and 9 swapped, then heapify)
+    // Example after first extraction and heapify:    [5, 3, 2, 6, 9] (6 and 9 swapped then heapify)
   }
 
 }

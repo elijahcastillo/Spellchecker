@@ -8,7 +8,6 @@
 
 
 
-
 void printHelp() {
     std::cout << "Usage:\n"
               << "  -repl\t\tStarts the application in REPL mode\n"
@@ -21,7 +20,6 @@ void printHelp() {
 
 
 int main(int argc, char** argv){
-
 
 
   if (argc == 1) {

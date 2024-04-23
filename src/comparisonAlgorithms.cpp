@@ -7,17 +7,17 @@ int dp_array[MAX_WORD_LEN][MAX_WORD_LEN] = {0};
 
 int levenshtine_distance(std::string word1, std::string word2){
 
-  // Exmaple for strings 'car' & 'cat'
+  // Exmaple for car & cat
   // ---------------------------------
   //     ""  c   a   r
-  //  "" 0   1   2   3  <-- Row is initialized at start
+  //  "" 0   1   2   3  <- Row is initialized at start
   //  c  1   0   1   2
   //  a  2   1   0   1
-  //  t  3   2   1   1  <-- This last value is the edit distance
+  //  t  3   2   1   1  <- This last value is the edit distance
   //     ^
   //    Column is Initialized at start
 
-  // Reset 2d array back to all 0's
+  // Reset 2d array back to all 0s
   memset(dp_array, 0, sizeof(dp_array));
 
   // Initialize the first row and column of the array
@@ -33,17 +33,18 @@ int levenshtine_distance(std::string word1, std::string word2){
   for (int idx1 = 1; idx1 <= word1.size(); idx1++) {
     for (int idx2 = 1; idx2 <= word2.size(); idx2++) {
 
-      // If current characters match, no operation is needed; take the previous best result.
+      // If current characters match, no operation is needed 
+      // take the previous best result from diagonal
       if (word1[idx1 - 1] == word2[idx2 - 1]) {
         dp_array[idx1][idx2] = dp_array[idx1 - 1][idx2 - 1];
       } else {
-        // Calculate costs of the 3 operation tha you could make to a single charcter operations
-        const int replaceCost = dp_array[idx1 - 1][idx2 - 1]; 
+        // Calculate costs of the 3 operation that you could make to a single charcter
+        const int substitutionCost = dp_array[idx1 - 1][idx2 - 1]; 
         const int insertCost = dp_array[idx1][idx2 - 1];
         const int deleteCost = dp_array[idx1 - 1][idx2]; 
 
         // The cost of the current operation is 1 plus the minimum of the three costs
-        dp_array[idx1][idx2] = 1 + std::min({replaceCost, insertCost, deleteCost});
+        dp_array[idx1][idx2] = 1 + std::min({substitutionCost, insertCost, deleteCost});
       }
     }
   }
@@ -57,13 +58,13 @@ int levenshtine_distance(std::string word1, std::string word2){
 
 int LCS(const std::string& str1, const std::string& str2) {
 
-  // Example 'cat' & 'hat'
+  // Example cat & hat
   // -----------------------------------
   //     ""  c   a   t
-  //  "" 0   0   0   0  <-- Row for LCS with "" and prefixes of cat
-  //  h  0   0   0   0  <-- 'h' does not match any letter in cat so carry over the previous values
-  //  a  0   0   1   1  <-- 'a' matches in both increment diagonal by 1
-  //  t  0   0   1   2  <-- 't' matches in both increment diagonal by 1
+  //  "" 0   0   0   0  <- Row for LCS with "" and prefixes of cat
+  //  h  0   0   0   0  <- h does not match any letter in cat so carry over the previous values
+  //  a  0   0   1   1  <- a matches in both increment diagonal by 1
+  //  t  0   0   1   2  <- t matches in both increment diagonal by 1
 
   // Reset 2d array back to all 0's
   memset(dp_array, 0, sizeof(dp_array));

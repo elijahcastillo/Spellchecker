@@ -2,11 +2,11 @@
 #include "include/heapsort.h"
 
 
+
 double combinedScore(const std::string& inputWord, const std::string& candidateWord) {
 /**
  *  Given two input strings, give a score based on different algorithms that
  *  shows how similar they are to each other
- *
  *
  * @param inputWord - First input string
  * @param candidateWord - Second input string
@@ -19,9 +19,9 @@ double combinedScore(const std::string& inputWord, const std::string& candidateW
     const double cosineSimScore = cosineSimilarityScore(inputWord, candidateWord);
 
     // Weights to show how much we want each comparison to effect the score
-    /* const double lcsWeight = 1.0; // Adjust based on relative importance */
-    const double levWeight = 2.0; // Higher weight penalizes distance more
-    const double cosineWeight = 1.5; // Adjust to emphasize semantic similarity
+    /* const double lcsWeight = 1.0;*/
+    const double levWeight = 2.0;
+    const double cosineWeight = 1.5; 
 
     // Calculate combined score
     /* double score = (lcsWeight * lcsScore) - (levWeight * levDistance) + (cosineWeight * cosineSimScore); */
@@ -59,7 +59,8 @@ std::vector<WordScore> get_best_words(PrefixTrie* pt, const std::string& input) 
     std::string prefix = input.substr(0, 1);
 
 
-    // Check the original prefix
+    // Get all words with the prefix of the first letter of the input
+    // Append found words to vector
     std::vector<std::string> originalWords = pt->get_words_from_prefix(prefix);
     found_words.insert(found_words.end(), originalWords.begin(), originalWords.end());
 
@@ -68,6 +69,8 @@ std::vector<WordScore> get_best_words(PrefixTrie* pt, const std::string& input) 
         char nextLetter = input[1];
         std::string alternativePrefix = std::string(1, nextLetter);
         std::vector<std::string> alternativeWords = pt->get_words_from_prefix(alternativePrefix);
+
+        // Append to found words vector
         found_words.insert(found_words.end(), alternativeWords.begin(), alternativeWords.end());
     }
 
@@ -78,6 +81,7 @@ std::vector<WordScore> get_best_words(PrefixTrie* pt, const std::string& input) 
     }
 
     // Sort the vector of WordScore by the score in descending order
+    // Since it is an implace algorithm we dont dont need to make a new vector
     Sort::heapSort(word_scores);
 
     return word_scores;
